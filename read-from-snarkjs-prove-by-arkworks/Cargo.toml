@@ -1,5 +1,5 @@
 [package]
-name = "ark-circom-basic-process"
+name = "read-from-snarkjs-prove-by-arkworks"
 version = "0.1.0"
 edition = "2021"
 

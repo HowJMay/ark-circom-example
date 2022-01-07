@@ -7,7 +7,7 @@ use ark_std::rand::thread_rng;
 
 fn main() {
     // Load the WASM and R1CS for witness and proof generation
-    let cfg = CircomConfig::<Bn254>::new("./circom/example-circuit.wasm", "./circom/example-circuit.r1cs").unwrap();
+    let cfg = CircomConfig::<Bn254>::new("./src/testdata/circom/example-circuit.wasm", "./src/testdata/circom/example-circuit.r1cs").unwrap();
 
     // Insert our public inputs as key value pairs
     let mut builder = CircomBuilder::new(cfg);
@@ -25,6 +25,7 @@ fn main() {
     let circom = builder.build().unwrap();
 
     let inputs = circom.get_public_inputs().unwrap();
+
 
     // Generate the proof
     let proof = prove(circom, &params, &mut rng).unwrap();

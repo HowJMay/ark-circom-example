@@ -1,0 +1,1 @@
+arkworks seemingly hasn't fully support circom2, so the `.wasm` file generate by circom 2 will fail.

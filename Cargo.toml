@@ -1,14 +1,10 @@
-[package]
-name = "ark-circom-example"
-version = "0.1.0"
-edition = "2021"
+[workspace]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+#members = [
+#    "exact-arkworks",
+#    "read-from-snarkjs-prove-by-arkworks"
+#]
 
-[dependencies]
-
-ark-circom = { git = "https://github.com/gakonst/ark-circom.git" }
-ark-std = { version = "0.3.0", default-features = false, features = ["parallel"] }
-ark-bn254 = { version = "0.3.0" }
-ark-groth16 = { git = "https://github.com/arkworks-rs/groth16", rev = "765817f", features = ["parallel"] }
-ark-relations = { version = "0.3.0", default-features = false }
+members = [
+    "exact-arkworks"
+]

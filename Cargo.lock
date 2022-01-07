@@ -67,17 +67,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "ark-circom-example"
-version = "0.1.0"
-dependencies = [
- "ark-bn254",
- "ark-circom",
- "ark-groth16",
- "ark-relations",
- "ark-std",
-]
-
-[[package]]
 name = "ark-crypto-primitives"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -841,6 +830,17 @@ dependencies = [
  "serde_json",
  "thiserror",
  "tiny-keccak",
+]
+
+[[package]]
+name = "exact-arkworks"
+version = "0.1.0"
+dependencies = [
+ "ark-bn254",
+ "ark-circom",
+ "ark-groth16",
+ "ark-relations",
+ "ark-std",
 ]
 
 [[package]]
