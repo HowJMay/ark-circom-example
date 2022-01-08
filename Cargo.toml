@@ -1,10 +1,6 @@
 [workspace]
 
-#members = [
-#    "exact-arkworks",
-#    "read-from-snarkjs-prove-by-arkworks"
-#]
-
 members = [
-    "exact-arkworks"
+    "exact-arkworks",
+    "read-from-snarkjs-prove-by-arkworks"
 ]
