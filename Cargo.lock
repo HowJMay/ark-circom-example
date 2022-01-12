@@ -1588,6 +1588,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "read-proof-file-complex"
+version = "0.1.0"
+dependencies = [
+ "ark-bn254",
+ "ark-ec",
+ "ark-ff",
+ "ark-groth16",
+ "ark-poly",
+ "ark-relations",
+ "ark-serialize",
+ "ark-std",
+ "color-eyre",
+ "num",
+ "num-bigint",
+ "serde_json",
+]
+
+[[package]]
 name = "redox_syscall"
 version = "0.2.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"

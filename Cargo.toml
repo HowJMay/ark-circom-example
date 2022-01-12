@@ -2,5 +2,6 @@
 
 members = [
     "exact-arkworks",
-    "read-from-snarkjs-prove-by-arkworks"
+    "read-from-snarkjs-prove-by-arkworks",
+    "read-proof-file-complex"
 ]
