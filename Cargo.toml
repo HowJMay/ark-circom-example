@@ -3,5 +3,8 @@
 members = [
     "exact-arkworks",
     "read-from-snarkjs-prove-by-arkworks",
-    "read-proof-file-complex"
+    "read-proof-file-complex",
+    "ff",
+    "ff-asm",
+    "ff-macros"
 ]

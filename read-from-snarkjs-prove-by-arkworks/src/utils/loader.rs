@@ -10,8 +10,8 @@ pub fn load_json_public_input(json: &serde_json::Value) -> Vec<Fr> {
 	public_inputs
 }
 
-pub fn load_json_verification_key(json: &serde_json::Value) -> ark_groth16::VerifyingKey::<Bn254> {
-    ark_groth16::VerifyingKey::<Bn254> {
+pub fn load_json_verification_key(json: &serde_json::Value) -> crate::utils::data_structures::VerifyingKey::<Bn254> {
+    crate::utils::data_structures::VerifyingKey::<Bn254> {
         alpha_g1: json_to_get_g1(&json, "vk_alpha_1"),
         beta_g2: json_to_get_g2(&json, "vk_beta_2"),
         gamma_g2: json_to_get_g2(&json, "vk_gamma_2"),
@@ -20,12 +20,12 @@ pub fn load_json_verification_key(json: &serde_json::Value) -> ark_groth16::Veri
     }
 }
 
-pub fn load_json_proof(json: &serde_json::Value) -> ark_groth16::Proof<Bn254> {
+pub fn load_json_proof(json: &serde_json::Value) -> crate::utils::data_structures::Proof<Bn254> {
 	let pi_a = json_to_get_g1(json, "pi_a");
 	let pi_b = json_to_get_g2(json, "pi_b");
 	let pi_c = json_to_get_g1(json, "pi_c");
 
-	ark_groth16::Proof {
+	crate::utils::data_structures::Proof {
 		a: pi_a,
 		b: pi_b,
 		c: pi_c,

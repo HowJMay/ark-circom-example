@@ -1,8 +1,10 @@
-use ark_groth16::{
-    prepare_verifying_key, verify_proof,
-};
 use std::path::Path;
-mod loader;
+mod utils {
+    pub mod loader;
+    pub mod verifier;
+    pub mod data_structures;
+}
+
 
 fn main() {
     let public_path = Path::new("./src/testdata/build/public.json");
@@ -11,18 +13,18 @@ fn main() {
     
     let json = std::fs::read_to_string(public_path).unwrap();
     let json: serde_json::Value = serde_json::from_str(&json).unwrap();
-    let inputs = loader::load_json_public_input(&json);
+    let inputs = utils::loader::load_json_public_input(&json);
     
     let json = std::fs::read_to_string(verification_key_path).unwrap();
     let json: serde_json::Value = serde_json::from_str(&json).unwrap();
-    let vk= loader::load_json_verification_key(&json);
-    let pvk = prepare_verifying_key(&vk);
+    let vk= utils::loader::load_json_verification_key(&json);
+    let pvk = utils::verifier::prepare_verifying_key(&vk);
 
     let json = ark_std::fs::read_to_string(proof_path).unwrap();
 	let json: serde_json::Value = serde_json::from_str(&json).unwrap();
-	let proof = loader::load_json_proof(&json);
+	let proof = utils::loader::load_json_proof(&json);
 
-    let verified = verify_proof(&pvk, &proof, &inputs).unwrap();
+    let verified = utils::verifier::verify_proof(&pvk, &proof, &inputs).unwrap();
     assert!(verified);
     print!("verified: {}\n", verified);
 }
